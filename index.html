@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Interest Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="compound_interest.js" defer></script>
+  </head>
+  <body>
+    <article>
+      <header>
+        <div>💰🤑</div>
+        <h1>Interest Calculator</h1>
+        <div>💵💳</div>
+      </header>
+      <main>
+        <form>
+          <label for="principal"> Principal </label>
+          <input id="principal" type="number" placeholder="Enter Principal:" />
+
+          <label for="apr"> APR </label>
+          <input type="range" id="apr" value="1" min="1" max="50" />
+          <output id="aprOutput"> 1% </output>
+
+          <label for="frequency"> Times Compounded (Per Year) </label>
+          <input
+            id="frequency"
+            type="number"
+            placeholder="Enter Frequency:"
+            min="1"
+          />
+
+          <label for="years">Years</label>
+          <input id="years" type="number" placeholder="Enter Years:" />
+
+          <p>Interest Earned: <output id="accumulated">$0.00</output></p>
+          <p>Total Amount: <output id="total">$0.00</output></p>
+        </form>
+        <figure>
+          <a
+            href="https://media.tenor.com/YlBfgZ3_INcAAAAM/cat-kitty.gif"
+            target="_blank"
+            title="Click here for cat w/ money"
+          >
+            <img
+              id="adorableCat"
+              src="https://i.pinimg.com/564x/9d/4a/49/9d4a49b2b2b9392d3f844c4dbcff52d6.jpg"
+              alt="Adorable Cat Image"
+            />
+          </a>
+        </figure>
+      </main>
+      <footer>
+        <div>
+          <a
+            href="https://codesandbox.io/p/sandbox/nervous-fire-2dwnqf"
+            target="_blank"
+            title="Hyperlink that sends you to the source code"
+            >Source Code
+          </a>
+        </div>
+      </footer>
+    </article>
+  </body>
+</html>
