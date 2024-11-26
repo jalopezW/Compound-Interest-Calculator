@@ -6,25 +6,25 @@ const yearsInput = document.querySelector("#years");
 const accumulatedOutput = document.querySelector("#accumulated");
 const totalOutput = document.querySelector("#total");
 
-//Update APR output on slider input
+// Update APR output on slider input
 aprSlider.addEventListener("input", () => {
   aprOutput.textContent = `${aprSlider.value}%`;
   calculate();
 });
 
-//Recalculate when inputs change
+// Recalculate when inputs change
 [principalInput, frequencyInput, yearsInput].forEach((input) => {
   input.addEventListener("input", calculate);
 });
 
 function calculate() {
-  //Get values from inputs
-  const principal = parseFloat(principalInput.value); //parseFloat func converts strings to floats
-  const apr = parseFloat(aprSlider.value) / 100; //Convert percentage to decim
+  // Get values from inputs
+  const principal = parseFloat(principalInput.value); // parseFloat func converts strings to floats
+  const apr = parseFloat(aprSlider.value) / 100; // Convert percentage to decim
   const frequency = parseFloat(frequencyInput.value);
   const years = parseFloat(yearsInput.value);
 
-  //Check if inputs are valid, but not necessary bc number input fields
+  // Check if inputs are valid, but not necessary bc number input fields
   if (
     isNaN(principal) ||
     isNaN(apr) ||
@@ -36,16 +36,16 @@ function calculate() {
   ) {
     accumulatedOutput.textContent = "$0.00";
     totalOutput.textContent = "$0.00";
-    return; //If any of the inputs are invalid, the interest and total amount outputs are set to "$0.00"
+    return; // If any of the inputs are invalid, the interest and total amount outputs are set to "$0.00"
   }
 
-  //Compound interest calculation
+  // Compound interest calculation
   const accumulatedInterest =
-    principal * Math.pow(1 + apr / frequency, frequency * years) - principal; //(base, exponent) also interest earned
+    principal * Math.pow(1 + apr / frequency, frequency * years) - principal; // (base, exponent) also interest earned
   const totalAmount = principal + accumulatedInterest;
-  //final_amount = p * ((1 + (r/n))**(n*t))
+  // final_amount = p * ((1 + (r/n))**(n*t))
 
-  //Display results
+  // Display results
   accumulatedOutput.textContent = `$${accumulatedInterest.toFixed(2)}`;
   totalOutput.textContent = `$${totalAmount.toFixed(2)}`;
 }
